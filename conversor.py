@@ -1,19 +1,13 @@
 def convertir_pesos():
-    pesos = input("Pon los pesos que tengas: ")
-    pesos = float(pesos)
+    pesos = float(input("Pon los pesos que tengas: "))
     valor_dolar = 3974
-    dolares = pesos/valor_dolar
-    dolares = round(dolares, 2)
-    dolares = str(dolares)
+    dolares = str(round(pesos/valor_dolar, 2))
     print(f"Tienes $ {dolares} dolares")
 
 def convertir_dolares():
-    dolares = input("Pon los dolares que tines: ")
-    dolares = float(dolares)
+    dolares = float(input("Pon los dolares que tines: "))
     valor_pesos = 3974
-    pesos = valor_pesos * dolares
-    pesos = round(pesos, 2)
-    pesos = str(pesos)
+    pesos = str(round(valor_pesos * dolares))
     print(f"Tienes $ {pesos} pesos")
 
 
@@ -26,8 +20,6 @@ def run():
       convertir_dolares()
   else:
       print("Coloca uno de los números indicados")
-
-
 
 
 if __name__ == '__main__':
