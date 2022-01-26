@@ -1,18 +1,21 @@
-def peso_o_dolar(option, mensaje, money, valor_dolar):
+def peso_o_dolar(option, mensaje, valor_dolar):
+
+    money = float(input("Cuanto dinero quieres convertir: "))
+
     if option == 1:
-        convertir_pesos(money, valor_dolar)
+        convertir_pesos(mensaje, money, valor_dolar)
     elif option == 2:
         convertir_dolares(mensaje, money, valor_dolar)
     else:
         print("Coloca uno de los números indicados")
 
-def convertir_pesos(pesos, valor_dolar):
+def convertir_pesos(mensaje, pesos, valor_dolar):
     dolares = str(round(pesos/valor_dolar, 2))
-    print(f"Tienes $ {dolares} dolares")
+    print(f"Se cambio de {mensaje} a dolares y el resultado fue: $ {dolares} USD")
 
 def convertir_dolares(mensaje, dolares, valor_dolar):
     pesos = str(round(valor_dolar * dolares, 2))
-    print(f"Tienes $ {pesos} {mensaje}")
+    print(f"se cambio de dolares a {mensaje} el resultado fue: $ {pesos}")
 
 
 def run():
@@ -23,21 +26,14 @@ def run():
   Elige una opción: """
 
   option = int(input(" 1: Para cambiar pesos a dolares 2: Para cambiar dolares a pesos -> "))
-  money = float(input("Cuanto dinero quieres convertir: "))
   option2 = int(input(menu))
 
   if option2 == 1:
-        valor_dolar = 3964.97
-        mensaje = "Pesos colombianos"
-        peso_o_dolar(option, mensaje, money, valor_dolar)
+        peso_o_dolar(option, "Pesos colombianos", 3964.97)
   elif option2 == 2:
-        valor_dolar = 104.62
-        mensaje = "Pesos argentinos"
-        peso_o_dolar(option, mensaje, money, valor_dolar)
+        peso_o_dolar(option, "Pesos argentinos", 104.62)
   elif option2 == 3:
-        valor_dolar = 20.62
-        mensaje = "Pesos mexicanos"
-        peso_o_dolar(option, mensaje, money, valor_dolar)
+        peso_o_dolar(option, "Pesos mexicanos", 20.62)
 
 if __name__ == '__main__':
     run()
